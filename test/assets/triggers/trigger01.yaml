@@ -1,0 +1,13 @@
+name: Trigger 01
+number_of_failures: 3
+failure_window:
+  scale: 10
+  type: minutes
+files:
+  -
+    path: ./test/assets/log01.log
+    patterns:
+      -
+        regex: \Afailed login from $IP_ADDRESS_REGEX\z
+        matches:
+          - ip_address
